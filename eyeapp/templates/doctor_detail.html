@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+    <div class="header-1">
+        <div class="container">
+            <div class="header-1-content">
+                <h1 data-w-id="ba0075a2-80f9-047e-c8fa-ed68ebd0d289"
+                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                    class="heading is-header-title">{{doctor.name }}</h1>
+                <div class="header-line-block">
+                    <div data-w-id="ba0075a2-80f9-047e-c8fa-ed68ebd0d28c"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-line"></div>
+                    <p data-w-id="ba0075a2-80f9-047e-c8fa-ed68ebd0d28d"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-12-line-text">{{doctor.role }}</p>
+                    <div data-w-id="ba0075a2-80f9-047e-c8fa-ed68ebd0d28f"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-line"></div>
+                </div>
+                <div class="header-content-block">
+                    <p data-w-id="ba0075a2-80f9-047e-c8fa-ed68ebd0d291"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-content-text">{{details.main_description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="padding">
+            <div class="container">
+                <div class="vertical-flex-gap-4em">
+                    <h2 class="heading is-medium-title">About </h2>
+                    <div class="w-layout-grid team-grid-1">
+                        <div id="w-node-_803f4e47-0c01-f217-0e21-fdbb7d426e6c-54441ff2">
+                            <img alt="" loading="lazy"
+                                src="https://assets-global.website-files.com/633daa121f130819bf83b08d/6349b9fb8a12a186c7739164_pexels-polina-zimmerman-4687344.jpg"
+                                sizes="(max-width: 479px) 80vw, (max-width: 767px) 86vw, (max-width: 991px) 88vw, 82vw"
+                                srcset="{{ doctor.image_500.url }} 500w, {{ doctor.image_800.url }} 800w, {{ doctor.image.url }} 1018w">
+                        </div>
+
+                        <div id="w-node-_05947dd1-2a01-5ce3-1ee7-6beae3d25fe3-54441ff2" class="team-content-block">
+                            <div class="rich-text w-richtext">
+                                {{details.about_description|safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section with-linen-bg">
+        <div class="container">
+            <div class="padding">
+                <div class="vertical-flex-gap-4em">
+                    <h2 class="heading is-medium-title">Other Team Members</h2>
+                    <div class="numbering-block">
+                        <p class="sign-text is-number"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                            The</p>
+                        <div class="numbering-line"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div>
+                        <p class="sign-text"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                            Team</p>
+                    </div>
+                    <div class="the-team-2 w-dyn-list">
+                        <div role="list" class="team-2-list w-dyn-items">
+                            {% for doctor in other_doctors %}
+                            <div role="listitem" class="team-2-item w-dyn-item">
+                                <a href="{% url 'doctor_detail' doctor.slug %}" class="team-2-content w-inline-block">
+                                    <p class="team-2-name">{{ doctor.name }}</p>
+                                    <p class="team-2-role">{{ doctor.role }}</p>
+                                </a>
+                                <div class="team-2-image">
+                                    <div class="_3d-block">
+                                        <div class="image-animation-trigger _3d-for-image"
+                                            style="will-change: transform; transform: translate3d(1.43152%, -1.67336%, 0px) scale3d(1, 1, 1) rotateX(1.67336deg) rotateY(2.14728deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                            <div class="animation-color-bg is-linen"
+                                                style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                            </div>
+                                            <img alt="{{ doctor.name }}" src="{{ doctor.image_500.url }}"
+                                                sizes="(max-width: 479px) 92vw, (max-width: 767px) 47vw, (max-width: 991px) 48vw, 34vw"
+                                                srcset="{{ doctor.image_500.url }} 500w, {{ doctor.image_800.url }} 800w, {{ doctor.image.url }} 1018w"
+                                                class="cover-image is-team"
+                                                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header class="header-6 with-tan-bg">
+        <div class="numbering-block is-absolute">
+            <p class="sign-text is-white"
+                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                Treatment</p>
+            <div class="numbering-line is-white"
+                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+            </div>
+            <p class="sign-text is-white"
+                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                Category</p>
+        </div>
+        <div class="container">
+            <div class="header-6-flex"><a href="/the-team" class="large-title-link w-inline-block">
+                    <p class="large-title-link-text">The team</p>
+                </a></div>
+        </div>
+
+        <div class="header-absolute-block with-padding">
+            <div class="sticky-block-1">
+                <div class="bg-color-for-sticky-sec-1"></div>
+                <div data-video-urls="{% static 'video/video.mp4' %}" data-autoplay="true" data-loop="true"
+                    data-wf-ignore="true" data-beta-bgvideo-upgrade="false"
+                    class="video-background w-background-video w-background-video-atom">
+                    <video id="4e19d988-9ef9-5caa-f4dc-235c7c644bad-video" autoplay="" loop="" muted="" playsinline=""
+                        data-wf-ignore="true" data-object-fit="cover">
+                        <source src="{% static 'video/video.mp4' %}" data-wf-ignore="true">
+
+                    </video>
+                    <div class="selectextShadowHost"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</main>
+{% endblock content %}

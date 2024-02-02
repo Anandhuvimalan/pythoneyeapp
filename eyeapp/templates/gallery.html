@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <header class="header-6">
+        <div class="container">
+            <h1 class="header-6-title-gallery">Gallery</h1>
+        </div>
+
+    </header>
+
+    <section class="section">
+        <div class="container is-full-width">
+            <div class="padding">
+                <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                    class="tabs-4 w-tabs">
+                    <div class="tabs-4-links w-tab-menu" role="tablist">
+                        <a data-w-tab="Tab 1" class="tab-4-link w-inline-block w-tab-link w--current"
+                            id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab"
+                            aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
+
+                            <div class="tab-4-link-text">Gallery</div>
+                        </a><a data-w-tab="Tab 2" class="tab-4-link w-inline-block w-tab-link"
+                            id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
+                            aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false" tabindex="-1">
+
+                            <div class="tab-4-link-text">Mizhi Shop</div>
+                        </a><a data-w-tab="Tab 3" class="tab-4-link w-inline-block w-tab-link"
+                            id="w-tabs-0-data-w-tab-2" href="#w-tabs-0-data-w-pane-2" role="tab"
+                            aria-controls="w-tabs-0-data-w-pane-2" aria-selected="false" tabindex="-1">
+
+                            <div class="tab-4-link-text">Equipments</div>
+                        </a>
+                    </div>
+                    <div class="tab-content w-tab-content">
+                        <div data-w-tab="Tab 1" class="tab-pane w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0"
+                            role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0"
+                            style="opacity: 1; transition: opacity 300ms ease 0s;">
+                            <div class="tab-inner with-borders">
+                                <h2 class="heading is-medium-title">Gallery</h2>
+                                <div class="w-layout-grid gallery-grid-4 in-tab">
+                                    {% for gallery_item in gallery_all %}
+                                    <a href="#" class="gallery-lightbox is-4th w-inline-block w-lightbox"
+                                        style="opacity: 0;" aria-label="open lightbox" aria-haspopup="dialog">
+                                        <img src="{{ gallery_item.image.url }}" loading="lazy"
+                                            sizes="(max-width: 479px) 84vw, (max-width: 767px) 89vw, (max-width: 1439px) 22vw, 23vw"
+                                            srcset="{{ gallery_item.image_500.url }} 500w, {{ gallery_item.image_800.url }} 800w, {{ gallery_item.image_1080.url }} 1080w, {{ gallery_item.image.url }} 1920w"
+                                            alt="{{ gallery_item.name }}" class="gallery-thumbnail">
+                                        <div class="gallery-background"
+                                            style="display: block; transform: translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                    </a>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-w-tab="Tab 2" class="tab-pane w-tab-pane" id="w-tabs-0-data-w-pane-1" role="tabpanel"
+                            aria-labelledby="w-tabs-0-data-w-tab-1" style="">
+                            <div class="tab-inner with-borders">
+                                <h2 class="heading is-medium-title">Mizhi Eyewear Shop</h2>
+                                <div class="w-layout-grid gallery-grid-4 in-tab">
+                                    {% for mizhi_item in mizhi_all %}
+                                    <a href="#" class="gallery-lightbox is-4th w-inline-block w-lightbox"
+                                        style="opacity: 0;" aria-label="open lightbox" aria-haspopup="dialog">
+                                        <img src="{{ mizhi_item.image.url }}" loading="lazy"
+                                            sizes="(max-width: 479px) 84vw, (max-width: 767px) 89vw, (max-width: 1439px) 22vw, 23vw"
+                                            srcset="{{ mizhi_item.image_500.url }} 500w, {{ mizhi_item.image_800.url }} 800w, {{ mizhi_item.image_1080.url }} 1080w, {{ mizhi_item.image.url }} 1920w"
+                                            alt="{{ mizhi_item.name }}" class="gallery-thumbnail">
+                                        <div class="gallery-background"
+                                            style="display: block; transform: translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                    </a>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-w-tab="Tab 3" class="tab-pane w-tab-pane" id="w-tabs-0-data-w-pane-2" role="tabpanel"
+                            aria-labelledby="w-tabs-0-data-w-tab-2" style="">
+                            <div class="tab-inner with-borders">
+                                <h2 class="heading is-medium-title">Our Equipments</h2>
+                                <div class="w-layout-grid gallery-grid-4 in-tab">
+                                    {% for equipment_item in equipment_all %}
+                                    <a href="#" class="gallery-lightbox is-4th w-inline-block w-lightbox"
+                                        style="opacity: 0;" aria-label="open lightbox" aria-haspopup="dialog">
+                                        <img src="{{ equipment_item.image.url }}" loading="lazy"
+                                            sizes="(max-width: 479px) 84vw, (max-width: 767px) 89vw, (max-width: 1439px) 22vw, 23vw"
+                                            srcset="{{ equipment_item.image_500.url }} 500w, {{ equipment_item.image_800.url }} 800w, {{ equipment_item.image_1080.url }} 1080w, {{ equipment_item.image.url }} 1920w"
+                                            alt="{{ equipment_item.name }}" class="gallery-thumbnail">
+                                        <div class="gallery-background"
+                                            style="display: block; transform: translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                    </a>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cta-section-3">
+        <div class="container">
+            <div class="padding">
+                <div class="w-layout-grid cta-3-grid-1">
+                    <div class="cta-3-block-1">
+                        <p class="cta-3-title">Contact Us</p>
+                    </div>
+                    <div class="cta-3-block-1">
+                        <p class="cta-3-text">Get a Replay From Us</p>
+                    </div>
+                    <div class="cta-3-block-1"><a href="{% url 'contact' %}" class="main-button w-inline-block">
+                            <div class="button-text">Contact</div><img src="{% static 'icons/servicewhitearrow.svg' %}"
+                                loading="lazy" alt="" class="button-icon">
+                        </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-3-image">
+            <div class="cta-3-filter"></div>
+            <div class="_3d-block">
+                <div class="image-animation-trigger _3d-for-image"
+                    style="will-change: transform; transform: translate3d(0.07896%, -0.22112%, 0px) scale3d(1, 1, 1) rotateX(0.22112deg) rotateY(0.11844deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <div class="animation-color-bg"
+                        style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    </div><img
+                        srcset="{% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769.webp' %} 500w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-500.webp' %} 800w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-800.webp' %} 1080w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-1080.webp' %} 1600w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-1600.webp' %} 2000w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-2000.webp' %} 2600w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-2600.webp' %} 3200w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-3200.webp' %} 4000w"
+                        sizes="(max-width: 479px) 46vw,
+                  (max-width: 767px) 49vw,
+                  (max-width: 991px) 50vw,
+                  (max-width: 1439px) 51vw,
+                  52vw" class="cover-image"
+                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        alt="Pexels-Karolina-Grabowska-4021769"
+                        src="{% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-4000.webp' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

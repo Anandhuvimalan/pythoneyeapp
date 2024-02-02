@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <header data-w-id="95e8160c-a453-db41-9cbd-329fd406b2bf" class="header-3">
+        <div class="header-3-padding">
+            <div class="container">
+                <div class="header-3-content-2">
+                    <div class="numbering-block">
+                        <div class="numbering-line is-white"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div>
+                        <p class="sign-text is-white"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                            Eye</p>
+                    </div>
+                    <h1 class="heading is-header-3-title-1">Categories</h1>
+                    <p class="header-3-text-1">Explore diverse eye care categories for comprehensive vision
+                        solutions<span class="opacity-80"></span>
+                    </p>
+                    <div class="buttons-flex-1 align-left">
+                        <a href="#explore" class="main-button is-transparent w-inline-block">
+                            <div class="button-text">Explore</div>
+                            <img src="{% static 'icons/arrow.svg' %}" loading="lazy" alt="" class="button-icon">
+                        </a>
+                        <a href="{% url 'contact' %}" class="main-button is-white w-inline-block">
+                            <div class="button-text">Contact</div>
+                            <img src="{% static 'icons/blackarrow.svg' %}" loading="lazy" alt="" class="button-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-1-image">
+            <div class="_3d-block">
+                <div class="image-animation-trigger _3d-for-image"
+                    style="will-change: transform; transform: translate3d(0.07896%, -0.22112%, 0px) scale3d(1, 1, 1) rotateX(0.22112deg) rotateY(0.11844deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <div class="parallax-animation">
+                        <div class="animation-color-bg is-dark-blue-color"
+                            style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div><img loading="lazy" alt="Servicebg"
+                            src="{% static 'images/servicebg/servicebg-p-1920.webp' %}" sizes="(max-width: 479px) 84vw,
+                               (max-width: 767px) 89vw,
+                               (max-width: 991px) 90vw,
+                               (max-width: 1439px) 84vw,
+                               (max-width: 1919px) 86vw,
+                               1576px" srcset="{% static 'images/servicebg/servicebg.webp' %} 500w,
+                                {% static 'images/servicebg/servicebg-p-500.webp' %} 800w,
+                                {% static 'images/servicebg/servicebg-p-800.webp' %} 1080w,
+                                {% static 'images/servicebg/servicebg-p-1080.webp' %} 1600w,
+                                {% static 'images/servicebg/servicebg-p-1600.webp' %} 1920w"
+                            class="cover-image is-parallax"
+                            style="transform: translate3d(0px, -7%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="explore" class="section with-dark-blue-bg">
+        <div class="container">
+            <div class="padding">
+                <div class="vertical-flex-gap-4em is-center">
+                    <div class="categories-2 w-dyn-list">
+                        <div role="list" class="category-2-list w-dyn-items">
+                            {% for category in categories_all %}
+                            <div role="listitem" class="category-2-item w-dyn-item">
+                                <div style="background-color:hsla(0, 0%, 98%, 1)" class="category-2-flex">
+                                    <div class="category-2-image">
+                                        <div class="_3d-block">
+                                            <div class="image-animation-trigger _3d-for-image">
+                                                <div class="animation-color-bg is-dark-blue-color"></div>
+                                                <img src="{{ category.image.url }}" alt="{{ category.name }}"
+                                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 97vw, (max-width: 991px) 99vw, (max-width: 1439px) 29vw, (max-width: 1919px) 30vw, 515.8984375px"
+                                                    srcset="{{ category.image_500.url }} 500w, 
+                                    {{ category.image_800.url }} 800w, 
+                                    {{ category.image_1080.url }} 1080w, 
+                                    {{ category.image.url }} 1920w" class="cover-image" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-2-content">
+                                        <h2 style="color: black;" class="heading is-category-2-title">{{ category.name}}
+                                        </h2>
+                                        <p class="category-2-text-1">{{ category.description }}</p>
+                                        <div class="category-2-with-lines">
+                                            <div class="category-2-nested-links w-dyn-list">
+                                                <div role="list" class="category-2-nested-link-list w-dyn-items">
+                                                    {% for icon in category.icons.all %}
+                                                    <div role="listitem" class="category-2-nested-link-item w-dyn-item">
+                                                        <a href="{% if icon.slug == 'diagnostic-testing' %}{% url 'diagnostic-testing' %}
+                                                        {% elif icon.slug == 'eye-condition-treatments' %}{% url 'eye-condition-treatments' %}
+                                                        {% else %}{% url 'service_detail' icon.slug %}{% endif %}"
+                                                            class="category-2-nested-link w-inline-block">
+                                                            <img loading="lazy" alt="{{ icon.name }}"
+                                                                src="{{ icon.image.url }}" class="category-2-icon" />
+                                                            <p class="category-2-treatment">{{ icon.name }}</p>
+                                                        </a>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="category-2-lines">
+                                                <div class="category-2-line is-2nd"></div>
+                                                <div class="category-2-line"></div>
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'category_detail' category.slug %}"
+                                            class="category-button w-inline-block">
+                                            <div class="button-text">{{ category.name }}</div>
+                                            <img src="{% static 'icons/arrow right.svg' %}" loading="lazy" alt=""
+                                                class="button-icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="padding">
+                <div class="w-layout-grid cta-1-grid-1">
+                    <a data-w-id="176de156-eee6-9789-ada5-cb2e58a79601" href="/contact"
+                        class="cta-1-block-1 w-inline-block">
+                        <div class="cta-1-content">
+                            <p class="cta-1-title">Contact</p>
+                            <p class="cta-1-text">Promoting health and happiness through top-notch eye care, including
+                                cutting-edge surgeries</p>
+                            <img src="{% static 'icons/servicewhitearrow.svg' %}" loading="lazy" alt=""
+                                class="cta-1-icon-1">
+                        </div>
+                        <img src="{% static 'icons/servicewhitearrow.svg' %}" loading="lazy" alt="" class="cta-1-icon-2"
+                            style="transform: translate3d(-4em, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; display: block;">
+                        <div class="cta-animation-bg"
+                            style="transform: translate3d(-101%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; display: block;">
+                        </div>
+                    </a>
+                    <div id="w-node-_176de156-eee6-9789-ada5-cb2e58a79609-58a79600" class="cta-1-block-2">
+                        <div class="image-animation-trigger">
+                            <div class="parallax-animation">
+                                <div class="animation-color-bg" style="display: block;"></div>
+                                <img loading="lazy" alt="Contacteye"
+                                    src="{% static 'images/contacteye/contacteye-p-1920.webp' %}" sizes="100vw" srcset="{% static 'images/contacteye/contacteye.webp' %} 500w,
+             {% static 'images/contacteye/contacteye-p-500.webp' %} 800w,
+             {% static 'images/contacteye/contacteye-p-800.webp' %} 1080w,
+             {% static 'images/contacteye/contacteye-p-1080.webp' %} 1600w,
+             {% static 'images/contacteye/contacteye-p-1600.webp' %} 1920w" class="cover-image is-parallax"
+                                    style="transform: translate3d(0px, -7%, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</div>
+{% endblock content %}

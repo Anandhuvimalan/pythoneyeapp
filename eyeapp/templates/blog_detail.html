@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <div class="header-5">
+        <div class="header-5-inner less-paddings">
+            <div class="container">
+                <div class="header-1-content">
+                    <h1 data-w-id="fef2754a-2391-923d-fe05-6901f652b927"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="heading is-blog-title-1">{{blog.title}}</h1>
+                    <div class="header-line-block">
+                        <div data-w-id="bb5ec34f-0b1c-975f-e05c-166d6f27b390"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            class="header-line"></div>
+                        <p data-w-id="a71a8429-7aab-b784-a14d-f195257752cd"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            class="header-subtitle with-border">Topic</p>
+                        <p data-w-id="ad263c60-1acc-d0d6-25fe-cbbbbd016d25"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            class="header-subtitle">{{blog.category}}</p>
+                        <div data-w-id="4643a550-157a-c896-48a3-b6243a892243"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            class="header-line"></div>
+                    </div>
+                    <div class="header-content-block">
+                        <p data-w-id="fef2754a-2391-923d-fe05-6901f652b92d"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            class="header-content-text is-blog-desc">{{blog.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-absolute-block">
+                <div class="header-5-color-bg"></div>
+                <div class="image-animation-trigger">
+                    <div class="animation-color-bg is-midnight-blue"
+                        style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    </div><img alt="Online marketing tips for dental professionals and dentist" loading="lazy"
+                        src="{{blog.image.url}}" sizes="100vw" class="cover-image"
+                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="padding">
+                <div class="blog-content-block">
+                    <div class="rich-text w-richtext">
+                        {{blog.content|safe}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container is-blog-listing">
+            <div class="padding is-blog-listing-1">
+                <div class="vertical-flex-gap-4em">
+                    <h2 class="heading is-extra-small-title">You may like</h2>
+                    <div class="listing-12 w-dyn-list">
+                        <div role="list" class="listing-12-grid w-dyn-items">
+                            {% for blog in other_blogs %}
+                            <div role="listitem" class="listing-12-item w-dyn-item">
+                                <div class="listing-12-block">
+                                    <a aria-label="Blog post" href="{% url 'blog_detail' slug=blog.slug %}"
+                                        class="listing-12-image w-inline-block">
+                                        <div class="_3d-block">
+                                            <div class="image-animation-trigger _3d-for-image" style="">
+                                                <div class="animation-color-bg is-black" style="display: block;"></div>
+                                                <img alt="blog" loading="lazy" src="{{ blog.image.url }}"
+                                                    sizes="(max-width: 479px) 97vw, (max-width: 991px) 49vw, 28vw"
+                                                    class="cover-image"
+                                                    style="transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="blog-categories">
+                                        {% if blog.featured %}
+                                        <p class="listing-11-text-1 is-2nd">Featured</p>
+                                        {% endif %}
+                                        <p class="listing-11-text-1">{{ blog.category.name }}</p>
+                                    </div>
+                                    <a href="{% url 'blog_detail' slug=blog.slug %}"
+                                        class="listing-12-link-name w-inline-block">
+                                        <p class="listing-12-title">{{ blog.title }}</p>
+                                    </a>
+                                    <p class="listing-12-text-2">{{ blog.description }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

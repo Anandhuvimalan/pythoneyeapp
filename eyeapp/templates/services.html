@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <header data-w-id="95e8160c-a453-db41-9cbd-329fd406b2bf" class="header-3">
+        <div class="header-3-padding">
+            <div class="container">
+                <div class="header-3-content-2">
+                    <div class="numbering-block">
+                        <div class="numbering-line is-white"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div>
+                        <p class="sign-text is-white"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                            Eye</p>
+                    </div>
+                    <h1 class="heading is-header-3-title-1">Services</h1>
+                    <p class="header-3-text-1">Elevate Your Vision: Comprehensive Eye Treatments and Specialized
+                        Services at Our Hospital<span class="opacity-80"></span>
+                    </p>
+                    <div class="buttons-flex-1 align-left">
+                        <a href="#explore" class="main-button is-transparent w-inline-block">
+                            <div class="button-text">Explore</div>
+                            <img src="{% static 'icons/arrow.svg' %}" loading="lazy" alt="" class="button-icon">
+                        </a>
+                        <a href="{% url 'contact' %}" class="main-button is-white w-inline-block">
+                            <div class="button-text">Contact</div>
+                            <img src="{% static 'icons/blackarrow.svg' %}" loading="lazy" alt="" class="button-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-1-image">
+            <div class="_3d-block">
+                <div class="image-animation-trigger _3d-for-image"
+                    style="will-change: transform; transform: translate3d(0.07896%, -0.22112%, 0px) scale3d(1, 1, 1) rotateX(0.22112deg) rotateY(0.11844deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <div class="parallax-animation">
+                        <div class="animation-color-bg is-dark-blue-color"
+                            style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div><img loading="lazy" alt="Servicebg"
+                            src="{% static 'images/servicebg/servicebg-p-1920.webp' %}" sizes="(max-width: 479px) 84vw,
+                               (max-width: 767px) 89vw,
+                               (max-width: 991px) 90vw,
+                               (max-width: 1439px) 84vw,
+                               (max-width: 1919px) 86vw,
+                               1576px" srcset="{% static 'images/servicebg/servicebg.webp' %} 500w,
+                                {% static 'images/servicebg/servicebg-p-500.webp' %} 800w,
+                                {% static 'images/servicebg/servicebg-p-800.webp' %} 1080w,
+                                {% static 'images/servicebg/servicebg-p-1080.webp' %} 1600w,
+                                {% static 'images/servicebg/servicebg-p-1600.webp' %} 1920w"
+                            class="cover-image is-parallax"
+                            style="transform: translate3d(0px, -7%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="explore" class="section with-dark-blue-bg">
+        <div class="container">
+            <div class="padding top-0em">
+                <div class="vertical-flex-gap-8em">
+                    <div class="listing-2 w-dyn-list">
+                        <div role="list" class="listing-2-list w-dyn-items" id="your-service-container">
+                            {% include 'services_ajax.html' %}
+                        </div>
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if all_services.has_previous %}
+                                <a href="?page=1" class="pagination-link">&laquo; First</a>
+                                <a href="?page={{ all_services.previous_page_number }}"
+                                    class="pagination-link">Previous</a>
+                                {% endif %}
+
+                                <span class="current-page">{{ all_services.number }}</span>
+
+                                {% if all_services.has_next %}
+                                <a href="?page={{ all_services.next_page_number }}" class="pagination-link">Next</a>
+                                <a href="?page={{ all_services.paginator.num_pages }}" class="pagination-link">Last
+                                    &raquo;</a>
+                                {% endif %}
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="padding">
+                <div class="w-layout-grid cta-1-grid-1">
+                    <a data-w-id="176de156-eee6-9789-ada5-cb2e58a79601" href="{% url 'contact' %}"
+                        class="cta-1-block-1 w-inline-block">
+                        <div class="cta-1-content">
+                            <p class="cta-1-title">Contact</p>
+                            <p class="cta-1-text">Nurture Health and Happiness through Exceptional Eye Care</p>
+                            <img src="{% static 'icons/servicewhitearrow.svg' %}" loading="lazy" alt=""
+                                class="cta-1-icon-1">
+                        </div>
+                        <img src="{% static 'icons/servicewhitearrow.svg' %}" loading="lazy" alt="" class="cta-1-icon-2"
+                            style="transform: translate3d(-4em, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; display: block;">
+                        <div class="cta-animation-bg"
+                            style="transform: translate3d(-101%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; display: block;">
+                        </div>
+                    </a>
+                    <div id="w-node-_176de156-eee6-9789-ada5-cb2e58a79609-58a79600" class="cta-1-block-2">
+                        <div class="image-animation-trigger">
+                            <div class="parallax-animation">
+                                <div class="animation-color-bg" style="display: block;"></div>
+                                <img loading="lazy" alt="Contacteye"
+                                    src="{% static 'images/contacteye/contacteye-p-1920.webp' %}" sizes="100vw" srcset="{% static 'images/contacteye/contacteye.webp' %} 500w,
+             {% static 'images/contacteye/contacteye-p-500.webp' %} 800w,
+             {% static 'images/contacteye/contacteye-p-800.webp' %} 1080w,
+             {% static 'images/contacteye/contacteye-p-1080.webp' %} 1600w,
+             {% static 'images/contacteye/contacteye-p-1600.webp' %} 1920w" class="cover-image is-parallax"
+                                    style="transform: translate3d(0px, -7%, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</div>
+{% endblock content %}

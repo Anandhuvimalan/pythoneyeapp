@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <div class="header-9">
+        <div class="container">
+            <div class="header-1-content">
+                <h1 data-w-id="8612ab03-a32a-8c3a-b03f-e062e9286fd6" class="heading is-header-title"
+                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    Patient stories</h1>
+                <div class="header-line-block">
+                    <div data-w-id="8612ab03-a32a-8c3a-b03f-e062e9286fd9" class="header-line"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    </div>
+                    <p data-w-id="8612ab03-a32a-8c3a-b03f-e062e9286fda" class="header-subtitle"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        Reviews</p>
+                    <div data-w-id="8612ab03-a32a-8c3a-b03f-e062e9286fdc" class="header-line"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    </div>
+                </div>
+                <div class="header-content-block">
+                    <p data-w-id="8612ab03-a32a-8c3a-b03f-e062e9286fde" class="header-content-text"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        Treatments reviews from satisfied patients</p><a
+                        data-w-id="8612ab03-a32a-8c3a-b03f-e062e9286fe0" href="#breadcrumbs"
+                        class="button is-dark w-inline-block"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        <div class="text-for-button">Explore</div><img loading="lazy" alt=""
+                            src="{% static 'icons/arrow.svg' %}" class="icon-for-button">
+                        <div class="button-bg is-dark"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-9-background">
+            <div class="_3d-block">
+                <div class="image-animation-trigger _3d-for-image"
+                    style="will-change: transform; transform: translate3d(1.71952%, 1.05016%, 0px) scale3d(1, 1, 1) rotateX(-1.05016deg) rotateY(2.57928deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <div class="parallax-animation">
+                        <div class="animation-color-bg is-dark-blue-color"
+                            style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div><img loading="lazy" alt="Reviewbg"
+                            src="{% static 'images/reviewbg/reviewbg-p-1920.webp' %}" sizes="100vw" srcset="{% static 'images/reviewbg/reviewbg.webp' %} 500w,
+                                {% static 'images/reviewbg/reviewbg-p-500.webp' %} 800w,
+                                {% static 'images/reviewbg/reviewbg-p-800.webp' %} 1080w,
+                                {% static 'images/reviewbg/reviewbg-p-1080.webp' %} 1920w"
+                            class="cover-image is-parallax-medium"
+                            style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section with-linen-light-bg">
+        <div class="container">
+            <div class="padding">
+                <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                    class="tabs-1 w-tabs">
+                    <div class="tab-content w-tab-content">
+                        <div data-w-tab="Tab 1" class="tab-pane w-tab-pane" id="w-tabs-0-data-w-pane-0" role="tabpanel"
+                            aria-labelledby="w-tabs-0-data-w-tab-0" style="">
+
+                        </div>
+                        <div data-w-tab="Tab 2" class="tab-pane w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-1"
+                            role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-1"
+                            style="opacity: 1; transition: opacity 300ms ease 0s;">
+                            <div class="tab-inner">
+                                <div class="reviews w-dyn-list">
+                                    <div role="list" class="reviews-list w-dyn-items">
+                                        {% for review in reviews %}
+                                        {% if forloop.counter|divisibleby:2 %}
+                                        <!-- Odd element layout -->
+                                        <div class="review-grid-column-1">
+                                            <div class="review-image-size">
+                                                <div class="while-scrolling-effect-5rem">
+                                                    <div class="image-animation-trigger">
+                                                        <div class="parallax-animation">
+                                                            <div class="animation-color-bg is-linen-light"></div>
+                                                            <img alt="{{ review.patient_name }}" loading="lazy"
+                                                                src="{{ review.image.url }}"
+                                                                class="cover-image is-parallax">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-grid-column-2">
+                                            <div class="review-content-block">
+                                                <p class="patient-name">{{ review.patient_name }}</p>
+                                                <div class="rich-text w-richtext">
+                                                    <p>{{ review.content }}</p>
+                                                </div>
+                                                <div class="review-client-name-block">
+                                                    <p class="review-text-1 is-2nd">{{ review.what_doctor }}</p>
+                                                    <div class="review-line"></div>
+                                                    <a href="#" class="review-link w-inline-block">
+                                                        <p class="review-link-text">{{ review.doctor_name }}</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                        <!-- Even element layout -->
+                                        <div class="review-grid-column-1">
+                                            <div class="review-content-block">
+                                                <p class="patient-name">{{ review.patient_name }}</p>
+                                                <div class="rich-text w-richtext">
+                                                    <p>{{ review.content }}</p>
+                                                </div>
+                                                <div class="review-client-name-block">
+                                                    <p class="review-text-1 is-2nd">{{ review.what_doctor }}</p>
+                                                    <div class="review-line"></div>
+                                                    <a href="#" class="review-link w-inline-block">
+                                                        <p class="review-link-text">{{ review.doctor_name }}</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-grid-column-2">
+                                            <div class="review-image-size">
+                                                <div class="while-scrolling-effect-5rem">
+                                                    <div class="image-animation-trigger">
+                                                        <div class="parallax-animation">
+                                                            <div class="animation-color-bg is-linen-light"></div>
+                                                            <img alt="{{ review.patient_name }}" loading="lazy"
+                                                                src="{{ review.image.url }}"
+                                                                class="cover-image is-parallax">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer-wrap">
+        <section class="section with-linen-gradient">
+            <div class="container">
+                <div class="padding">
+                    <div class="cta-section-3">
+                        <div class="container">
+                            <div class="padding">
+                                <div class="w-layout-grid cta-3-grid-1">
+                                    <div class="cta-3-block-1">
+                                        <p class="cta-3-title">Your story</p>
+                                    </div>
+                                    <div class="cta-3-block-1">
+                                        <p class="cta-3-text">Do you satisfied with the patient's services and
+                                            treatments?</p>
+                                    </div>
+                                    <div class="cta-3-block-1"><a href="{% url 'contact' %}"
+                                            class="main-button w-inline-block">
+                                            <div class="button-text">Contact us</div><img
+                                                src="{% static 'icons/servicewhitearrow.svg' %}" loading="lazy" alt=""
+                                                class="button-icon">
+                                        </a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-3-image">
+                            <div class="cta-3-filter"></div>
+                            <div class="_3d-block">
+                                <div class="image-animation-trigger _3d-for-image"
+                                    style="will-change: transform; transform: translate3d(1.71952%, 1.05016%, 0px) scale3d(1, 1, 1) rotateX(-1.05016deg) rotateY(2.57928deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                    <div class="animation-color-bg" style="display: block;"></div><img loading="lazy"
+                                        alt="Pexels-Pavel-Danilyuk-5996605"
+                                        src="{% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-4000.webp' %}"
+                                        sizes="[500, 800, 1080, 1600, 2000, 2600, 3200, 4000]"
+                                        srcset="{% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-500.webp' %} 500w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-800.webp' %} 800w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-1080.webp' %} 1080w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-1600.webp' %} 1600w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-2000.webp' %} 2000w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-2600.webp' %} 2600w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-3200.webp' %} 3200w,
+                                            {% static 'images/pexels-pavel-danilyuk-5996605/pexels-pavel-danilyuk-5996605-p-4000.webp' %} 4000w" class="cover-image"
+                                        style="transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+{% endblock content %}

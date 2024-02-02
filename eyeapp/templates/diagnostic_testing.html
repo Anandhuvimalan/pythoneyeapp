@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+    <div class="header-1">
+        <div class="container">
+            <div class="header-1-content">
+                <h1 data-w-id="9777a902-ef83-a43e-29a9-fedd85a35268"
+                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                    class="heading is-header-title">Diagnostic Testing</h1>
+                <div class="header-line-block">
+                    <div data-w-id="9777a902-ef83-a43e-29a9-fedd85a3526a"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-line"></div>
+                    <p data-w-id="9777a902-ef83-a43e-29a9-fedd85a3526b"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-12-line-text">Eye Tests</p>
+                    <div data-w-id="9777a902-ef83-a43e-29a9-fedd85a3526c"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-line"></div>
+                </div>
+                <div class="header-content-block">
+                    <p data-w-id="9777a902-ef83-a43e-29a9-fedd85a3526e"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="header-content-text">A diagnostic eye test assesses and evaluates the overall health and
+                        visual function of the eyes to detect any potential issues or conditions.</p><a
+                        href="#aboutservice" data-w-id="55bc8f6e-5869-c3ee-2ea4-5c4dbef93d34"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        class="main-button is-transparent w-inline-block">
+                        <div class="button-text">Explore</div><img src="{% static 'icons/arrow.svg' %}" loading="lazy"
+                            alt="" class="button-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-1-image">
+            <div class="_3d-block">
+                <div class="image-animation-trigger _3d-for-image"
+                    style="will-change: transform; transform: translate3d(0.07896%, -0.22112%, 0px) scale3d(1, 1, 1) rotateX(0.22112deg) rotateY(0.11844deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <div class="parallax-animation">
+                        <div class="animation-color-bg is-dark-blue-color"
+                            style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div><img loading="lazy" alt="Pexels-Karolina-Grabowska-4021779"
+                            src="{% static 'images/pexels-karolina-grabowska-4021779/pexels-karolina-grabowska-4021779-p-1920.jpg' %}"
+                            sizes="100vw" srcset="{% static
+                    'images/pexels-karolina-grabowska-4021779/pexels-karolina-grabowska-4021779.jpg' %} 500w,
+                    {% static 'images/pexels-karolina-grabowska-4021779/pexels-karolina-grabowska-4021779-p-500.jpg'
+                    %} 800w,
+                    {% static 'images/pexels-karolina-grabowska-4021779/pexels-karolina-grabowska-4021779-p-800.jpg'
+                    %} 1080w,
+                    {% static
+                    'images/pexels-karolina-grabowska-4021779/pexels-karolina-grabowska-4021779-p-1080.jpg' %}
+                    1920w" class="cover-image is-parallax" style="transform: translate3d(0px, 0.23814%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+                    rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="aboutservice" class="section">
+        <div class="container">
+            <div class="padding">
+                <div class="vertical-flex-gap-4em">
+                    <h2 class="heading is-medium-title is-center">Other Services</h2>
+                    <div class="listing-2 w-dyn-list">
+                        <div role="list" class="listing-2-list w-dyn-items">
+                            {% for service in services_with_diagnostic_testing %}
+                            <div role="listitem" class="listing-2-item w-dyn-item">
+                                <a href="{% url 'service_detail' service.slug %}"
+                                    data-w-id="df0521d2-c544-247a-19f8-b25323545638"
+                                    class="listing-2-link-block w-inline-block">
+                                    <p class="uppercase-listing-title">{{ service.icon.name }}</p>
+                                    <div class="listing-2-content">
+                                        <h3 data-w-id="df0521d2-c544-247a-19f8-b2532354563b"
+                                            class="listing-heading-uni-1">
+                                            {{ service.name }}</h3>
+                                        <div class="listing-3-desc">
+                                            <p data-w-id="018506cc-4efa-f8ae-fb77-56534e6b6477" class="listing-text">
+                                                {{ service.description }}</p>
+                                        </div>
+                                        <div data-w-id="df0521d2-c544-247a-19f8-b2532354563d"
+                                            class="listing-arrow-link">
+                                            <div class="arrow-block-1">
+                                                <div class="circle-button">
+                                                    <img src="{% static 'icons/service arrow right.svg' %}"
+                                                        loading="lazy" alt="" class="arrow-icon-1" />
+                                                    <div class="circle-bg-1"></div>
+                                                </div>
+                                            </div>
+                                            <p class="listing-4-link-2-text">Treatment</p>
+                                        </div>
+                                    </div>
+                                    <div class="listing-bg"></div>
+                                    <div class="_3d-block">
+                                        <div class="image-animation-trigger _3d-for-image">
+                                            <div class="animation-color-bg is-dark-blue-color"></div>
+                                            <img loading="lazy" alt="{{ service.name }}" src="{{ service.image.url }}"
+                                                sizes="(max-width: 479px) 92vw, (max-width: 767px) 97vw, (max-width: 991px) 48vw, (max-width: 1439px) 43vw, (max-width: 1919px) 44vw, 826.09375px"
+                                                srcset="{{ service.image_500.url }} 500w, {{ service.image_800.url }} 800w, {{ service.image_1080.url }} 1080w, {{ service.image_1920.url }}"
+                                                class="cover-image" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cta-section-3">
+        <div class="container">
+            <div class="padding">
+                <div class="w-layout-grid cta-3-grid-1">
+                    <div class="cta-3-block-1">
+                        <p class="cta-3-title">Contact Us</p>
+                    </div>
+                    <div class="cta-3-block-1">
+                        <p class="cta-3-text">Get a Replay From Us</p>
+                    </div>
+                    <div class="cta-3-block-1"><a href="{% url 'contact' %}" class="main-button w-inline-block">
+                            <div class="button-text">Contact</div><img src="{% static 'icons/servicewhitearrow.svg' %}"
+                                loading="lazy" alt="" class="button-icon">
+                        </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-3-image">
+            <div class="cta-3-filter"></div>
+            <div class="_3d-block">
+                <div class="image-animation-trigger _3d-for-image"
+                    style="will-change: transform; transform: translate3d(0.07896%, -0.22112%, 0px) scale3d(1, 1, 1) rotateX(0.22112deg) rotateY(0.11844deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <div class="animation-color-bg"
+                        style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    </div><img
+                        srcset="{% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769.webp' %} 500w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-500.webp' %} 800w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-800.webp' %} 1080w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-1080.webp' %} 1600w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-1600.webp' %} 2000w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-2000.webp' %} 2600w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-2600.webp' %} 3200w,
+                    {% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-3200.webp' %} 4000w"
+                        sizes="(max-width: 479px) 46vw,
+                  (max-width: 767px) 49vw,
+                  (max-width: 991px) 50vw,
+                  (max-width: 1439px) 51vw,
+                  52vw" class="cover-image"
+                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                        alt="Pexels-Karolina-Grabowska-4021769"
+                        src="{% static 'images/pexels-karolina-grabowska-4021769/pexels-karolina-grabowska-4021769-p-4000.webp' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section with-linen-bg">
+        <div class="container">
+            <div class="padding">
+                <div class="vertical-flex-gap-8em">
+                    <h2 class="heading is-medium-title is-center">Patient succes stories</h2>
+                    <div class="reviews w-dyn-list">
+                        <div role="list" class="reviews-list w-dyn-items">
+                            {% for review in reviews_all %}
+                            {% if forloop.counter|divisibleby:2 %}
+                            <!-- Odd element layout -->
+                            <div class="review-grid-column-1">
+                                <div class="review-image-size">
+                                    <div class="while-scrolling-effect-5rem">
+                                        <div class="image-animation-trigger">
+                                            <div class="parallax-animation">
+                                                <div class="animation-color-bg is-linen-light"></div>
+                                                <img alt="{{ review.patient_name }}" loading="lazy"
+                                                    src="{{ review.image.url }}" class="cover-image is-parallax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-grid-column-2">
+                                <div class="review-content-block">
+                                    <p class="patient-name">{{ review.patient_name }}</p>
+                                    <div class="rich-text w-richtext">
+                                        <p>{{ review.content }}</p>
+                                    </div>
+                                    <div class="review-client-name-block">
+                                        <p class="review-text-1 is-2nd">{{ review.what_doctor }}</p>
+                                        <div class="review-line"></div>
+                                        <a href="#" class="review-link w-inline-block">
+                                            <p class="review-link-text">{{ review.doctor_name }}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% else %}
+                            <!-- Even element layout -->
+                            <div class="review-grid-column-1">
+                                <div class="review-content-block">
+                                    <p class="patient-name">{{ review.patient_name }}</p>
+                                    <div class="rich-text w-richtext">
+                                        <p>{{ review.content }}</p>
+                                    </div>
+                                    <div class="review-client-name-block">
+                                        <p class="review-text-1 is-2nd">{{ review.what_doctor }}</p>
+                                        <div class="review-line"></div>
+                                        <a href="#" class="review-link w-inline-block">
+                                            <p class="review-link-text">{{ review.doctor_name }}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-grid-column-2">
+                                <div class="review-image-size">
+                                    <div class="while-scrolling-effect-5rem">
+                                        <div class="image-animation-trigger">
+                                            <div class="parallax-animation">
+                                                <div class="animation-color-bg is-linen-light"></div>
+                                                <img alt="{{ review.patient_name }}" loading="lazy"
+                                                    src="{{ review.image.url }}" class="cover-image is-parallax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <section class="section">
+                        <div class="w-layout-grid cta-2-grid">
+                            <div id="w-node-_073f4d94-128d-f812-df53-c6035dc9cd8a-5dc9cd88" class="cta-2-block-1">
+                                <div class="image-animation-trigger">
+                                    <div class="parallax-animation">
+                                        <div class="animation-color-bg"
+                                            style="display: block; transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div><img loading="lazy" alt="Reviewbarimage"
+                                            src="{% static 'images/reviewbarimage/reviewbarimage-p-1920.webp' %}" sizes="(max-width: 479px) 84vw,
+                                               (max-width: 767px) 89vw,
+                                               (max-width: 991px) 90vw,
+                                               (max-width: 1439px) 84vw,
+                                               (max-width: 1919px) 86vw,
+                                               1576px" srcset="{% static 'images/reviewbarimage/reviewbarimage.webp' %} 500w,
+                                                {% static 'images/reviewbarimage/reviewbarimage-p-500.webp' %} 800w,
+                                                {% static 'images/reviewbarimage/reviewbarimage-p-800.webp' %} 1080w,
+                                                {% static 'images/reviewbarimage/reviewbarimage-p-1080.webp' %} 1600w,
+                                                {% static 'images/reviewbarimage/reviewbarimage-p-1600.webp' %} 1920w"
+                                            class="cover-image is-parallax"
+                                            style="transform: translate3d(0px, -7%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                                    </div>
+                                </div>
+                            </div><a data-w-id="073f4d94-128d-f812-df53-c6035dc9cd8f" href="{% url 'reviews' %}"
+                                class="cta-2-block-2 w-inline-block">
+                                <div class="cta-2-content">
+                                    <p class="cta-2-title"
+                                        style="transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        Reviews<br></p>
+                                    <p class="cta-2-text-1"
+                                        style="transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        All patient success stories</p>
+                                </div>
+                                <div class="cta-background-color"
+                                    style="transform: translate3d(0px, 101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; display: block;">
+                                </div><img src="{% static 'icons/servicewhitearrow.svg' %}" loading="lazy" alt=""
+                                    class="cta-2-icon"
+                                    style="transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% load static %}
+{% for service in all_services %}
+<div role="listitem" class="listing-2-item w-dyn-item">
+    <a href="{% url 'service_detail' service.slug %}" data-w-id="df0521d2-c544-247a-19f8-b25323545638"
+        class="listing-2-link-block w-inline-block">
+        <p class="uppercase-listing-title">{{ service.icon.name }}</p>
+        <div class="listing-2-content">
+            <h3 data-w-id="df0521d2-c544-247a-19f8-b2532354563b" class="listing-heading-uni-1">
+                {{ service.name }}</h3>
+            <div class="listing-3-desc">
+                <p data-w-id="018506cc-4efa-f8ae-fb77-56534e6b6477" class="listing-text">
+                    {{ service.description }}</p>
+            </div>
+            <div data-w-id="df0521d2-c544-247a-19f8-b2532354563d" class="listing-arrow-link">
+                <div class="arrow-block-1">
+                    <div class="circle-button">
+                        <img src="{% static 'icons/service arrow right.svg' %}" loading="lazy" alt=""
+                            class="arrow-icon-1" />
+                        <div class="circle-bg-1"></div>
+                    </div>
+                </div>
+                <p class="listing-4-link-2-text">Treatment</p>
+            </div>
+        </div>
+        <div class="listing-bg"></div>
+        <div class="_3d-block">
+            <div class="image-animation-trigger _3d-for-image">
+                <div class="animation-color-bg is-dark-blue-color"></div>
+                <img loading="lazy" alt="{{ service.name }}" src="{{ service.image.url }}"
+                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 97vw, (max-width: 991px) 48vw, (max-width: 1439px) 43vw, (max-width: 1919px) 44vw, 826.09375px"
+                    srcset="{{ service.image_500.url }} 500w, {{ service.image_800.url }} 800w, {{ service.image_1080.url }} 1080w, {{ service.image_1920.url }}"
+                    class="cover-image" />
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}
